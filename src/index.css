@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-base-900 text-stone-100 font-body antialiased;
+  background-image:
+    radial-gradient(70rem 40rem at 100% -10%, rgba(235, 185, 125, 0.28), transparent 60%),
+    radial-gradient(60rem 35rem at -10% 10%, rgba(248, 215, 145, 0.24), transparent 55%),
+    radial-gradient(50rem 30rem at 50% 50%, rgba(215, 165, 105, 0.16), transparent 60%);
+  background-attachment: fixed;
+}
+
+::selection {
+  background: rgba(227, 178, 92, 0.3);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #856349 #493424;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #493424;
+}
+::-webkit-scrollbar-thumb {
+  background: #856349;
+  border-radius: 4px;
+}
+
+/* visible keyboard focus, everywhere */
+:focus-visible {
+  outline: 2px solid #e3b25c;
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.leaflet-container {
+  background: #2C2013 !important;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  background: #2C2013;
+  color: #F0E6D6;
+  border-radius: 10px;
+  border: 1px solid #5A4128;
+}
+
+.leaflet-popup-tip {
+  background: #2C2013;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-content {
+  box-shadow: none;
+}
+
+.leaflet-control-zoom a {
+  background: #2C2013 !important;
+  color: #F0E6D6 !important;
+  border-color: #5A4128 !important;
+}
+
+/* ── Heritage visual-language utilities ─────────────────────────────── */
+
+/* Faint topographic / contour-line texture used behind hero + section backdrops */
+.bg-topo {
+  background-image: repeating-radial-gradient(
+    circle at 20% 20%,
+    rgba(227, 178, 92, 0.05) 0,
+    rgba(227, 178, 92, 0.05) 1px,
+    transparent 1px,
+    transparent 46px
+  );
+}
+
+/* Subtle architectural grid, evokes GIS/blueprint layers */
+.bg-heritage-grid {
+  background-image: linear-gradient(rgba(239, 234, 224, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 234, 224, 0.05) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+/* Fine film-grain overlay for a less "flat digital" surface */
+.bg-grain {
+  position: relative;
+}
+.bg-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.text-gradient-gold {
+  background: linear-gradient(120deg, #f1d28c, #c99a3a 55%, #e3b25c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-surface {
+  @apply relative rounded-lg border border-base-700 bg-base-800/90 shadow-panel backdrop-blur-sm;
+}
+
+.card-hover {
+  @apply transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-gold-500/40 hover:shadow-glow;
+}
+
+.glass-panel {
+  background: rgba(27, 34, 38, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.divider-ornate {
+  position: relative;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(227, 178, 92, 0.5), transparent);
+}
+
+/* Scanning line used for the AI Visual Inspection panel */
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(227, 178, 92, 0.9), transparent);
+  box-shadow: 0 0 12px 2px rgba(227, 178, 92, 0.6);
+}
+
+/* Page-level entrance transition, keyed by route in AppShell/Home */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.page-enter {
+  animation: fadeUp 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
