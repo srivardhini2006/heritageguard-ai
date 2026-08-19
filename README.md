@@ -1,32 +1,16 @@
-# HeritageGuard AI
+# React + Vite
 
-AI-Powered Predictive Heritage Conservation Platform
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Problem
+Currently, two official plugins are available:
 
-Heritage sites are exposed to environmental, structural,
-and visitor-related factors that can cause gradual deterioration.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Solution
+## React Compiler
 
-HeritageGuard AI uses predictive analytics, computer vision,
-GIS, and conservation intelligence to assess and forecast
-heritage-site deterioration risk.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Core Modules
+## Expanding the Oxlint configuration
 
-- Predictive Risk Analysis
-- Computer Vision
-- GIS Risk Mapping
-- Conservation Intelligence
-- Data Processing
-- Web Dashboard
-
-## Team
-
-- Member 1
-- Member 2
-- Member 3
-- Member 4
-- Member 5
-- Member 6
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
