@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Computer Vision datasets
+computer-vision/data/
+
+# YOLO generated files
+runs/
+*.pt
+
+# Local temporary files
+temp_*.txt
