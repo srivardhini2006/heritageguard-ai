@@ -7,7 +7,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from conservation import analyze_site, rank_sites, structural_score_from_crack_detection
+from backend.conservation import analyze_site, rank_sites, structural_score_from_crack_detection
 
 
 # ============================================================
