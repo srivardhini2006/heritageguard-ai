@@ -1,0 +1,186 @@
+{
+  "best_model_name": "SVM",
+  "random_state": 42,
+  "feature_columns": [
+    "avg_temperature_c",
+    "temperature_variance",
+    "humidity_pct",
+    "annual_rainfall_mm",
+    "air_quality_index",
+    "pm25",
+    "pm10",
+    "so2",
+    "no2",
+    "extreme_weather_events_count",
+    "avg_daily_footfall",
+    "annual_visitor_count",
+    "peak_season_footfall",
+    "visitor_growth_rate_pct",
+    "physical_contact_allowed",
+    "vandalism_incidents_count",
+    "latitude",
+    "longitude",
+    "elevation_m",
+    "distance_to_coast_km",
+    "flood_zone_flag",
+    "flood_risk_score",
+    "proximity_to_industrial_area_km",
+    "vegetation_cover_pct",
+    "seismic_zone_rating",
+    "crowd_control_measures_Moderate (staff+barricades)",
+    "crowd_control_measures_No Formal Measures",
+    "crowd_control_measures_Strict (ticketed timed-entry)",
+    "soil_type_Black (Regur)",
+    "soil_type_Red-Laterite",
+    "soil_type_Rocky-Mountainous",
+    "soil_type_Sandy-Arid",
+    "pollution_composite",
+    "environmental_hazard_composite",
+    "visitor_pressure_ratio",
+    "footfall_growth_interaction",
+    "climate_stress_index"
+  ],
+  "engineered_features": [
+    "pollution_composite",
+    "environmental_hazard_composite",
+    "visitor_pressure_ratio",
+    "footfall_growth_interaction",
+    "climate_stress_index"
+  ],
+  "target_column": "condition_risk_label",
+  "label_map": {
+    "0": "Relative Low",
+    "1": "Relative Medium",
+    "2": "Relative High",
+    "3": "Relative Critical"
+  },
+  "train_size": 80,
+  "test_size": 20,
+  "smote_used": false,
+  "signal_diagnostic": {
+    "max_abs_correlation": 0.21850575010901474,
+    "max_mutual_information": 0.16581151471683642
+  },
+  "cv_grid_search_summary": {
+    "Logistic Regression": {
+      "best_params": {
+        "clf__C": 0.01,
+        "clf__class_weight": null
+      },
+      "best_cv_macro_f1": 0.4038095238095238
+    },
+    "Random Forest": {
+      "best_params": {
+        "clf__class_weight": "balanced",
+        "clf__max_depth": null,
+        "clf__min_samples_leaf": 1,
+        "clf__n_estimators": 400
+      },
+      "best_cv_macro_f1": 0.3193997668997669
+    },
+    "Gradient Boosting": {
+      "best_params": {
+        "clf__learning_rate": 0.05,
+        "clf__max_depth": 2,
+        "clf__n_estimators": 200
+      },
+      "best_cv_macro_f1": 0.293968253968254
+    },
+    "SVM": {
+      "best_params": {
+        "clf__C": 1,
+        "clf__class_weight": null,
+        "clf__kernel": "rbf"
+      },
+      "best_cv_macro_f1": 0.4056349206349206
+    },
+    "XGBoost": {
+      "best_params": {
+        "clf__learning_rate": 0.01,
+        "clf__max_depth": 3,
+        "clf__n_estimators": 100
+      },
+      "best_cv_macro_f1": 0.34825396825396826
+    }
+  },
+  "test_set_metrics": {
+    "accuracy": 0.35,
+    "precision_macro": 0.3020833333333333,
+    "recall_macro": 0.35,
+    "f1_macro": 0.29395604395604397,
+    "precision_weighted": 0.3020833333333333,
+    "recall_weighted": 0.35,
+    "f1_weighted": 0.29395604395604397
+  },
+  "classification_report": {
+    "Relative Low": {
+      "precision": 0.375,
+      "recall": 0.6,
+      "f1-score": 0.46153846153846156,
+      "support": 5.0
+    },
+    "Relative Medium": {
+      "precision": 0.5,
+      "recall": 0.2,
+      "f1-score": 0.2857142857142857,
+      "support": 5.0
+    },
+    "Relative High": {
+      "precision": 0.3333333333333333,
+      "recall": 0.6,
+      "f1-score": 0.42857142857142855,
+      "support": 5.0
+    },
+    "Relative Critical": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 5.0
+    },
+    "accuracy": 0.35,
+    "macro avg": {
+      "precision": 0.3020833333333333,
+      "recall": 0.35,
+      "f1-score": 0.29395604395604397,
+      "support": 20.0
+    },
+    "weighted avg": {
+      "precision": 0.3020833333333333,
+      "recall": 0.35,
+      "f1-score": 0.29395604395604397,
+      "support": 20.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      3,
+      0,
+      2,
+      0
+    ],
+    [
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      2,
+      0,
+      3,
+      0
+    ],
+    [
+      1,
+      1,
+      3,
+      0
+    ]
+  ],
+  "confusion_matrix_labels": [
+    "Relative Low",
+    "Relative Medium",
+    "Relative High",
+    "Relative Critical"
+  ]
+}
