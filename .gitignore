@@ -1,29 +1,20 @@
 # Python
 __pycache__/
 *.py[cod]
+
+# Virtual environment
 .venv/
 venv/
 
-# Environment variables
-.env
+# ML outputs
+runs/
+*.pt
+
+# Dataset
+computer-vision/data/raw/
+
+# Generated outputs
+computer-vision/data/processed/
 
 # Jupyter
 .ipynb_checkpoints/
-
-# Node
-node_modules/
-dist/
-
-# IDE
-.vscode/
-.idea/
-
-# ML models
-*.pkl
-*.joblib
-*.pt
-*.pth
-
-# OS
-.DS_Store
-Thumbs.db
